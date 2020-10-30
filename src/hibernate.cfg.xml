@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration SYSTEM "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+		<!-- Settings for a local PostgreSQL database. -->
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/matricula?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+		
+        <!-- Print SQL to stdout, format it nicely  -->
+        <property name="show_sql">false</property> 
+        <property name="format_sql">true</property>
+
+        <!-- Drop and then re-create schema on SessionFactory build, for testing  -->
+        <property name="hbm2ddl.auto">update</property>
+
+	<!-- Use the Hibernate built-in pool for tests. -->
+        <property name="connection.pool_size">3</property>
+		
+	<!--*********** Mapeamento das classes/tabelas ...  ***********-->        
+	<mapping class="projeto.barbearia.modelo.Pessoa"/>
+	<mapping class="projeto.barbearia.modelo.Endereco"/> 
+	<mapping class="projeto.barbearia.modelo.Aluno"/>
+	<mapping class="projeto.barbearia.modelo.Funcionario"/>
+	<mapping class="projeto.barbearia.modelo.Professor"/>
+	<mapping class="projeto.barbearia.modelo.Secretaria"/>
+	<mapping class="projeto.barbearia.modelo.Serie"/>
+	<mapping class="projeto.barbearia.modelo.Turma"/>
+	<mapping class="projeto.barbearia.modelo.Turno"/>
+	<mapping class="projeto.barbearia.modelo.Frequencia"/>
+	<mapping class="projeto.barbearia.modelo.Disciplina"/>
+	<mapping class="projeto.barbearia.modelo.Avaliacao"/>
+	<mapping class="projeto.barbearia.modelo.Matricula"/>
+	<mapping class="projeto.barbearia.modelo.Diario"/>
+	<mapping class="projeto.barbearia.modelo.Boletim"/>
+	<mapping class="projeto.barbearia.modelo.Perfil"/>
+	<mapping class="projeto.barbearia.modelo.Usuario"/>
+        
+    </session-factory>
+
+</hibernate-configuration>
